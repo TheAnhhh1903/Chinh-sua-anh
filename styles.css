@@ -12,55 +12,57 @@ body {
 .container {
   display: flex;
   background: #333;
-  border-radius: 15px; /* Giảm border radius */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Giảm box shadow */
-  padding: 10px; /* Giảm padding */
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
 }
 .canvas-wrapper {
   border: 2px solid white;
-  border-radius: 10px; /* Giảm border radius */
-  width: 420px; /* Giảm width */
-  height: 280px; /* Giảm height */
+  border-radius: 10px;
+  width: 420px;
+  height: 330px; /* tăng height để có chỗ cho nút */
   background: #1e1e1e;
-  margin-right: 15px; /* Giảm margin */
+  margin-right: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* sắp xếp theo chiều dọc */
+  align-items: center; /* căn giữa theo chiều ngang */
 }
 .controls {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Giảm gap */
+  gap: 10px;
 }
 .control {
   background: #1e1e1e;
-  padding: 6px; /* Giảm padding */
-  border-radius: 8px; /* Giảm border radius */
+  padding: 6px;
+  border-radius: 8px;
 }
 .control label {
   display: block;
-  margin-bottom: 2px; /* Giảm margin */
+  margin-bottom: 2px;
 }
 input[type=range], select {
-  width: 120px; /* Giảm width */
+  width: 120px;
 }
 .btns {
   display: flex;
-  gap: 6px; /* Giảm gap */
+  gap: 6px;
+  margin-top: auto; /* đẩy nút xuống cuối */
+  padding-bottom: 10px; /* thêm padding cho đẹp */
 }
 .btns button {
   background: #444;
   color: white;
   border: none;
-  padding: 6px 12px; /* Giảm padding */
-  border-radius: 6px; /* Giảm border radius */
+  padding: 6px 12px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .btns button:hover {
   background: #555;
 }
 .download-btn {
-  margin-top: 10px; /* Giảm margin */
+  margin-top: 10px;
   background: #4CAF50;
 }
 .download-btn a {
@@ -69,6 +71,6 @@ input[type=range], select {
   display: inline-block;
   width: 100%;
   text-align: center;
-  padding: 6px; /* Giảm padding */
-  border-radius: 6px; /* Giảm border radius */
+  padding: 6px;
+  border-radius: 6px;
 }

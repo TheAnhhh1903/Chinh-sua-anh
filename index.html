@@ -10,14 +10,13 @@
     <div class="container">
         <div class="canvas-wrapper">
             <canvas id="canvas" width="400" height="260"></canvas>
-        </div>
-        <div class="controls">
             <div class="btns">
                 <button onclick="document.getElementById('upload').click()">Import</button>
                 <input type="file" id="upload" style="display: none" accept="image/*" onchange="loadImage(event)">
                 <button onclick="resetAdjustments()">Reset</button>
             </div>
-
+        </div>
+        <div class="controls">
             <div class="control">
                 <label>Chọn Logo</label>
                 <input type="file" id="uploadLogo" accept="image/*" onchange="loadLogo(event)">
