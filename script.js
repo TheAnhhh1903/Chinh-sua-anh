@@ -91,9 +91,12 @@ function applyFilters() {
         data[i + 2] = clamp(data[i + 2] + brightness, 0, 255);
 
         // Áp dụng độ tương phản
-        data[i] = clamp((data[i] - 128) * (contrast / 100 + 1) + 128, 0, 255);
-        data[i + 1] = clamp((data[i + 1] - 128) * (contrast / 100 + 1) + 128, 0, 255);
-        data[i + 2] = clamp((data[i + 2] - 128) * (contrast / 100 + 1) + 128, 0, 255);
+        const contrastFactor = contrast / 100;
+        const adjustedContrast = contrastFactor > 0 ? 1 + contrastFactor : 1 + contrastFactor / 2; // Điều chỉnh hệ số khi contrast âm
+
+        data[i] = clamp((data[i] - 128) * adjustedContrast + 128, 0, 255);
+        data[i + 1] = clamp((data[i + 1] - 128) * adjustedContrast + 128, 0, 255);
+        data[i + 2] = clamp((data[i + 2] - 128) * adjustedContrast + 128, 0, 255);
 
         // Áp dụng các bộ lọc khác (nếu có)
         data[i] = clamp(data[i] + temp, 0, 255);

@@ -19,13 +19,14 @@ body {
 .canvas-wrapper {
   border: 2px solid white;
   border-radius: 10px;
-  width: 420px;
-  height: 330px; /* tăng height để có chỗ cho nút */
+  width: 720px;
+  height: 485px;
   background: #1e1e1e;
   margin-right: 15px;
   display: flex;
-  flex-direction: column; /* sắp xếp theo chiều dọc */
-  align-items: center; /* căn giữa theo chiều ngang */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Căn chỉnh các phần tử bên trong theo chiều dọc */
 }
 .controls {
   display: flex;
@@ -47,8 +48,7 @@ input[type=range], select {
 .btns {
   display: flex;
   gap: 6px;
-  margin-top: auto; /* đẩy nút xuống cuối */
-  padding-bottom: 10px; /* thêm padding cho đẹp */
+  padding-bottom: 10px;
 }
 .btns button {
   background: #444;
