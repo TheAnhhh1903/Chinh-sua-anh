@@ -1,85 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Processing</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Processing</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="canvas-wrapper">
-            <canvas id="canvas" width="700" height="455"></canvas>
-            <div class="btns">
-                <button onclick="document.getElementById('upload').click()">Import</button>
-                <input type="file" id="upload" style="display: none" accept="image/*" onchange="loadImage(event)">
-                <button onclick="resetAdjustments()">Reset</button>
-            </div>
+  <div class="container">
+    <div class="main-content">
+      <div class="canvas-wrapper">
+        <canvas id="canvas" width="700" height="455"></canvas>
+        <div class="btns">
+          <button onclick="document.getElementById('upload').click()">Import</button>
+          <input type="file" id="upload" style="display: none" accept="image/*" onchange="loadImage(event)" />
+          <button onclick="resetAdjustments()">Reset</button>
         </div>
-        <div class="controls">
-            <div class="control">
-                <label>Chọn Logo</label>
-                <input type="file" id="uploadLogo" accept="image/*" onchange="loadLogo(event)">
-                <br><br>
-                <label>Vị trí đặt logo</label>
-                <select id="logo-position">
-                    <option value="topleft">Top Left</option>
-                    <option value="topcenter">Top Center</option>
-                    <option value="topright">Top Right</option>
-                    <option value="middleleft">Middle Left</option>
-                    <option value="middlecenter">Middle Center</option>
-                    <option value="middleright">Middle Right</option>
-                    <option value="bottomleft">Bottom Left</option>
-                    <option value="bottomcenter">Bottom Center</option>
-                    <option value="bottomright">Bottom Right</option>
-                </select>
-                <br><br>
-                <label>Kích thước logo</label>
-                <input type="range" min="10" max="100" value="10" id="logo-size" oninput="drawImage()">
-            </div>
-
-            <div class="control">
-                <label>Temperature</label>
-                <input type="range" min="-100" max="100" value="0" id="temp">
-                <button onclick="resetTemp()">Reset</button>
-            </div>
-            <div class="control">
-                <label>Tint</label>
-                <input type="range" min="-100" max="100" value="0" id="tint">
-                <button onclick="resetTint()">Reset</button>
-            </div>
-            <div class="control">
-                <label>Brightness</label>
-                <input type="range" min="-100" max="100" value="0" id="brightness">
-                <button onclick="resetBrightness()">Reset</button>
-            </div>
-            <div class="control">
-                <label>Contrast</label>
-                <input type="range" min="-100" max="100" value="0" id="contrast">
-                <button onclick="resetContrast()">Reset</button>
-            </div>
-            <div class="control">
-                <label>Hue</label>
-                <input type="range" min="-18" max="18" value="0" id="hue">
-                <button onclick="resetHue()">Reset</button>
-            </div>
-             <div class="control">
-                <label>Saturation</label>
-                <input type="range" min="-10" max="10" value="0" id="saturation">
-                <button onclick="resetSaturation()">Reset</button>
-            </div>
-            <div class="control">
-                <label>Rotate</label>
-                <input type="range" min="-180" max="180" value="0" id="rotate">
-                <button onclick="resetRotate()">Reset</button>
-            </div>
-
-            <div class="download-btn">
-                <a id="download-link" href="#" download="edited-image.png">Tải ảnh về</a>
-            </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label>Chọn Logo</label>
+          <input type="file" id="uploadLogo" accept="image/*" onchange="loadLogo(event)" />
+          <br /><br />
+          <label>Vị trí đặt logo</label>
+          <select id="logo-position">
+            <option value="topleft">Top Left</option>
+            <option value="topcenter">Top Center</option>
+            <option value="topright">Top Right</option>
+            <option value="middleleft">Middle Left</option>
+            <option value="middlecenter">Middle Center</option>
+            <option value="middleright">Middle Right</option>
+            <option value="bottomleft">Bottom Left</option>
+            <option value="bottomcenter">Bottom Center</option>
+            <option value="bottomright">Bottom Right</option>
+          </select>
+          <br /><br />
+          <label>Kích thước logo</label>
+          <input type="range" min="10" max="100" value="10" id="logo-size" oninput="drawImage()" />
         </div>
+
+        <div class="control">
+          <label>Temperature</label>
+          <input type="range" min="-100" max="100" value="0" id="temp" />
+          <button onclick="resetTemp()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Tint</label>
+          <input type="range" min="-100" max="100" value="0" id="tint" />
+          <button onclick="resetTint()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Brightness</label>
+          <input type="range" min="-100" max="100" value="0" id="brightness" />
+          <button onclick="resetBrightness()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Contrast</label>
+          <input type="range" min="-100" max="100" value="0" id="contrast" />
+          <button onclick="resetContrast()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Hue</label>
+          <input type="range" min="-18" max="18" value="0" id="hue" />
+          <button onclick="resetHue()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Saturation</label>
+          <input type="range" min="-10" max="10" value="0" id="saturation" />
+          <button onclick="resetSaturation()">Reset</button>
+        </div>
+        <div class="control">
+          <label>Rotate</label>
+          <input type="range" min="-180" max="180" value="0" id="rotate" />
+          <button onclick="resetRotate()">Reset</button>
+        </div>
+
+        <div class="download-btn">
+          <a id="download-link" href="#" download="edited-image.png">Tải ảnh về</a>
+        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Dòng chữ tên nhóm ở dưới -->
+    <div class="team-names">Vũ Hào, Trường Lâm, Thế Anh</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

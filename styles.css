@@ -9,47 +9,61 @@ body {
   height: 100vh;
   flex-direction: column;
 }
+
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #333;
   border-radius: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  padding: 10px 20px;
 }
+
+.main-content {
+  display: flex;
+  gap: 15px;
+}
+
 .canvas-wrapper {
   border: 2px solid white;
   border-radius: 10px;
   width: 720px;
   height: 485px;
   background: #1e1e1e;
-  margin-right: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Căn chỉnh các phần tử bên trong theo chiều dọc */
+  justify-content: space-between;
 }
+
 .controls {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .control {
   background: #1e1e1e;
   padding: 6px;
   border-radius: 8px;
 }
+
 .control label {
   display: block;
   margin-bottom: 2px;
 }
+
 input[type=range], select {
   width: 120px;
 }
+
 .btns {
   display: flex;
   gap: 6px;
   padding-bottom: 10px;
 }
+
 .btns button {
   background: #444;
   color: white;
@@ -58,13 +72,16 @@ input[type=range], select {
   border-radius: 6px;
   cursor: pointer;
 }
+
 .btns button:hover {
   background: #555;
 }
+
 .download-btn {
   margin-top: 10px;
   background: #4CAF50;
 }
+
 .download-btn a {
   color: white;
   text-decoration: none;
@@ -73,4 +90,13 @@ input[type=range], select {
   text-align: center;
   padding: 6px;
   border-radius: 6px;
+}
+
+/* Dòng tên nhóm nằm dưới */
+.team-names {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  color: #ccc;
 }
